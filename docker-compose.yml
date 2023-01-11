@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  caddy-service:
+    image: lingjhf/caddy
+    build:
+      context: $PWD/caddy
+      dockerfile: $PWD/caddy/caddy.dockerfile
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - $PWD/caddy/data:/data
+    deploy:
+      mode: replicated
+      replicas: 1
+
+  coredns-service:
+    build: 
+      context: $PWD/coredns
+      dockerfile: $PWD/coredns/coredns.dockerfile
+    restart: always
+    expose:
+      - '53'
+      - '53/udp'
+    ports:
+      - '53:53'
+      - '53:53/udp'

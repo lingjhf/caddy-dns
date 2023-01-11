@@ -1,0 +1,8 @@
+:443 {
+
+	tls /etc/certs/cert.pem /etc/certs/cert.key 
+
+	root  * /usr/share/caddy
+
+	file_server
+}
