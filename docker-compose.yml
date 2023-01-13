@@ -2,7 +2,8 @@ version: "3"
 
 services:
   caddy-service:
-    image: lingjhf/caddy
+    image: localhost/caddy
+    container_name: "caddy-service"
     build:
       context: $PWD/caddy
       dockerfile: $PWD/caddy/caddy.dockerfile
@@ -17,6 +18,8 @@ services:
       replicas: 1
 
   coredns-service:
+    image: localhost/coredns
+    container_name: "coredns-service"
     build: 
       context: $PWD/coredns
       dockerfile: $PWD/coredns/coredns.dockerfile

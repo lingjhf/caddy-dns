@@ -5,4 +5,8 @@
 	root  * /usr/share/caddy
 
 	file_server
+
+	reverse_proxy /api/* 172.20.18.117:3000
+
+	reverse_proxy 172.20.18.117:5173
 }

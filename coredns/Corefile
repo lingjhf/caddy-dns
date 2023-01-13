@@ -1,7 +1,7 @@
 .:53 {
 
     hosts {
-        172.31.85.72  serverapi.com
+        172.20.18.117  serverapi.cn
         fallthrough
     }
     forward . 8.8.8.8 9.9.9.9
